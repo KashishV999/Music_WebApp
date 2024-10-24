@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artist Submission | Melody Hub</title>
+    <link rel="stylesheet" href="./css/form.css" />
+  </head>
+
+  <body>
+    <section id="artist-form-section">
+      <header>
+        <h1>Melody Hub</h1>
+        <p>Get Lost in the Beats of Punjab</p>
+      </header>
+      <hr />
+      <h2>Submit a New Artist</h2>
+
+      <form id="artist-form" action="https://httpbin.org/post" method="post">
+        <!-- Artist Name Field -->
+        <label for="artist-input-name">Artist Name<span>*</span></label>
+        <input type="text" id="artist-input-name" name="artist_name" required />
+
+        <!-- Music Genre Field -->
+        <label for="genre-input">Music Genre<span>*</span></label>
+        <input type="text" list="genre-options-list" id="genre-input" name="music_genre" required />
+        <datalist id="genre-options-list">
+          <option value="Jazz"></option>
+          <option value="Classical"></option>
+          <option value="Electronic"></option>
+          <option value="Pop"></option>
+          <option value="Indie"></option>
+          <option value="Folk"></option>
+          <option value="Hip-Hop"></option>
+          <option value="Blues"></option>
+          <option value="Metal"></option>
+          <option value="R&B"></option>
+          <option value="Country"></option>
+        </datalist>
+
+        <!-- Social Media Links Field -->
+        <label for="social-media-input">Social Media Links</label>
+        <input
+          type="url"
+          id="social-media-input"
+          name="social_media_links[]"
+          placeholder="https://example.com"
+        />
+
+        <!-- Song/Video Links Field -->
+        <label for="media-links-input">Song/Video Links<span>*</span></label>
+        <div id="media-links-container">
+          <div class="media-link-wrapper">
+            <input type="url" name="media_links[]" placeholder="https://example.com" required />
+            <button type="button" class="delete-link-button">Remove</button>
+          </div>
+        </div>
+        <button type="button" id="add-link-button">Add Another Link</button>
+
+        <!-- Explicit Content Checkbox -->
+        <div class="explicit-content-section">
+          <input type="checkbox" id="explicit-content-checkbox" name="explicit_content" />
+          <label for="explicit-content-checkbox">Explicit Content:</label>
+        </div>
+
+        <!-- Description Field -->
+        <label for="artist-description">Why Should This Artist Be Added?<span>*</span></label>
+        <textarea id="artist-description" name="artist_description" rows="10" required></textarea>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit Artist" />
+
+        <!-- Required Field Notice -->
+        <div class="required-message">* Required</div>
+      </form>
+
+      <!-- Return to Homepage Button -->
+      <button id="home-return-button" onclick="window.location.href='index.html';">
+        Back to Homepage
+      </button>
+    </section>
+
+    <script src="./js/form.js"></script>
+  </body>
+</html>
